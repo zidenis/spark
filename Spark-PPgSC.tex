@@ -92,6 +92,11 @@
 % Hifenização de palavras feita de forma incorreta pelo LaTeX
 \hyphenation{PYTHON ou-tros}
 
+\newcommand{\Mautor}{Denis José Sousa de Albuquerque}
+\newcommand{\Mtitulo}{SparkSQL Development Issues}
+\newcommand{\Morientador}{Prof. Dr. Umberto Souza da Costa}
+\newcommand{\Mdata}{maio de 2018}
+\newcommand{\Mlinha}{Programming Languages and Formal Methods}
 
 % Inicio do documento
 \begin{document}
@@ -99,25 +104,25 @@
 	\frenchspacing
 	
 	% Capa (arquivo Includes/Capa.tex)
-	\include{Includes/Capa}
+	%\include{Includes/Capa}
 
 	% Folha de rosto (arquivo Includes/FolhaRosto.tex)
-	\include{Includes/FolhaRosto}	
+	%\include{Includes/FolhaRosto}	
 	
 	% Folha de aprovacao (arquivo Includes/FolhaAprovacao.tex)
-	\include{Includes/FolhaAprovacao}	
+	%\include{Includes/FolhaAprovacao}	
 	
 	% Dedicatoria (arquivo Includes/Dedicatoria.tex)
-	\include{Includes/Dedicatoria}
+	%\include{Includes/Dedicatoria}
 	
 	% Agradecimentos (arquivo Includes/Agradecimentos.tex)
-	\include{Includes/Agradecimentos}
+	%\include{Includes/Agradecimentos}
    
    % Epigrafe (arquivo Includes/Epigrafe.tex)
-	\include{Includes/Epigrafe}
+	%\include{Includes/Epigrafe}
 	
 	% Resumo em língua vernacula (arquivo Includes/Resumo.tex)
-	\include{Includes/Resumo}
+	%\include{Includes/Resumo}
 	
 	% Abstract, resumo em língua estrangeira (arquivo Include/Abstract.tex)
 	\include{Includes/Abstract}
@@ -141,36 +146,28 @@
 	% Sumário
 	\sumario
 
-	% Parte central do trabalho, englobando os capítulos que constituem o mesmo
-	% Os referidos capítulos devem ser organizados dentro do diretório "Capítulos"
-
-	% Capitulo 1: Introdução (arquivo Includes/Introducao.tex)
-	\include{Capitulos/Introducao}
-	
-	% Capitulo 2: Segundo capítulo (arquivo Includes/Capitulo2.tex)
-	\include{Capitulos/Capitulo2}
-	
-	% Capitulo 3: Terceiro capítulo (arquivo Includes/Capitulo3.tex)
-	\include{Capitulos/Capitulo3}
+	\include{Parts/1-Introduction}
+	\include{Parts/2-Background}
+	\include{Parts/3-Proposal}
 	
 	% Capitulo 4: Quarto capítulo (arquivo Includes/Capitulo4.tex)
-	\include{Capitulos/Capitulo4}
+	%\include{Parts/Capitulo4}
 	
 	% Capitulo 5: Quinto capítulo (arquivo Includes/Capitulo5.tex)
-	\include{Capitulos/Capitulo5}
+	%\include{Parts/Capitulo5}
 		
 	% Consideracoes finais
-	\include{Capitulos/Consideracoes}
+	%\include{Parts/Consideracoes}
 	
 	% Bibliografia (arquivo Capitulos/Referencias.bib)
-	\bibliography{Capitulos/Referencias}
+	\bibliography{Parts/References}
 	\bibliographystyle{abnt-alf}
 	
 	% Apêndice A (arquivo Includes/ApendiceA)
-	\include{Capitulos/ApendiceA}
+	%\include{Parts/ApendiceA}
 	
 	% Anexo A (arquivo Includes/AnexoA)
-	\include{Capitulos/AnexoA}
+	%\include{Parts/AnexoA}
 	
 	% Página em branco
 	\newpage
