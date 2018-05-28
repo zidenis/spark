@@ -1,13 +1,13 @@
 % Introdução
 \chapter{Introduction}
 
-The ongoing data explosion throughout the Internet gave rise to new applications and needs. To process this so-called Big Data in a reasonable amount of time, it is often required the distribution of the calculations to many machines. In its turn, dealing with distributed computing systems is a quite complex task, since the developer has to manage issues such as to the parallelization of the computation, the distribution of data and failure handling.
+The ongoing data explosion throughout the Internet gave rise to new applications and needs. To process this so-called Big Data in a reasonable amount of time, it is often required the distribution of the computations to many machines, since data sizes have exceeded the capabilities of single machines. In its turn, dealing with distributed computing systems is a quite complex task, since the developer has to manage issues such as to the parallelization of the calculations, the distribution of data and failure handling.
 
 To abstract the complexity of distributed systems and simplify the work of developers, the computer research community has been actively looking at different approaches which often take the form of middleware or programming frameworks \cite{ranganathan2007complexity}. One of these initiatives is Apache Spark ~\footnote{https://spark.apache.org/}. It was released in 2010 and has been adopted by many industries, being the most active open source project for big data processing \cite{armbrust2015sparksql}. 
 
 Spark is a cluster computing framework for implementing large-scale data processing applications while providing scalability and fault tolerance \cite{zaharia2010spark}. To use Spark, developers write a program that implements the high-level control flow of their application using one of the supported programming language (Java, Scala, Python, R or SQL) and libraries for relational (Spark SQL), machine learning (MLib), graph (GraphX) and stream processing.
 
-Regarding Spark SQL, it extends Spark with a declarative API to allow relational processing, offering features that are essential for an integrated and easy-to-use environment for big Data. According to \cite{armbrust2015sparksql}, user feedback and benchmarks show that Spark SQL makes it significantly simpler and more efficient to write data pipelines that mix relational and procedural processing.
+Regarding Spark SQL, it extends Spark with a declarative API to allow relational processing, offering features that are essential for an integrated and easy-to-use environment for big Data. According to \cite{armbrust2015sparksql}, user feedback and benchmarks show that Spark SQL makes it significantly simpler and more efficient to write data pipelines that mix relational and procedural processing. 
 
 \section{Motivation}
 
@@ -15,13 +15,26 @@ As stated in \cite{ranganathan2007complexity}, application and service developer
 
 For the Apache Spark Community~\footnote{https://spark.apache.org/community.html}, the recommended place to find help is the Stack Overflow~\footnote{https://stackoverflow.com/} Q\&A website, as it is an active forum for Spark users’ questions and answers. By consulting Stack Overflow we can state that developers have many problems and questions concerning implementing Spark applications, since there are nearly 40.000 questions tagged with \emph{apache-spark} tag as off June 2018.
 
-In the recent years, several works were conducted  to extract knowledge from Stack Overflow's posts (TODO: Incluir Referências). But there are no studies that focused on get insights into the issues faced by Spark SQL applications developers. The results of such analysis could lead us to improve the state of affairs, being a first step to provide a better toolset with, for instance, practice guidelines, automated test cases generation or static analysis of code.
+In the recent years, several works were conducted  to extract knowledge from Stack Overflow's posts (TODO: Incluir Referências). The analysis of the questions and answers posted on Stack Overflow could reveal interesting insight into the challenges faced
+by programmers.
+
+To our knowledge, there are no studies that focused on get insights into the issues faced by Spark SQL applications developers. The results of such analysis could improve the state of affairs, being a first step to provide a better toolset with, for instance, practice guidelines, automated test cases generation or static analysis of code.
+
+Taxonomy plays an important role in software engineering. One key step to sistematically addressing and resolving the problems associated with errors in application development is the development of a taxonomy of such errors. In the case of errors, such a taxonomy may be developed to categorize the types of errors; to explain why a specific error occurs; and to generate intervention strategies for each type of error.
 
 \section{General Goal}
 
-Extract and categorize knowledge regarding the development of Spark SQL applications 
+The main goal of this work is to construct a taxonomy of errors related to the development of Spark SQL applications by extracting knowledge from Stack Overflow in order to help developers.
 
 \section{Specific Goals}
+
+This work aims to address the following three research questions:
+
+\begin{enumerate}
+    \item Which are the issues that developers often face when implementing Spark SQL applications?
+    \item Is there a pattern of faults that are directly related to Spark SQL or they are the same problems found in SQL programs?
+    \item How this faults pattern is affected by the use of Spark SQL's functional API in contrast to using SQL standard statements?
+\end{enumerate}
 
 \section{The Problem Scope}
 
