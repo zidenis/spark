@@ -1,36 +1,31 @@
 % Introdução
 \chapter{Introduction}
 
-The current volume of data available on the Internet has led to new opportunities and challenges. The processing of Big Data is often done on a distributed environment, since processing a huge amount of data exceeds the capabilities of single machines. In this scenario the developer has to manage the complexity of the data partitioning, the distribution of the computation and a much more complex failure handling.
+The current volume of available data has created new opportunities and challenges. The term Big Data is often used to refer to large and complex data sets that grows rapidly. A distributed computing environment is commonly required to process this Big Data, since processing a huge amount of data exceeds the capabilities of single machines. In this scenario the developer has to manage the complexity of the data partitioning, the distribution of the computation and a much more complex failure handling.
 
-Several research efforts has been done in order help developers to deal with the complexity of distributed systems. This help often take the form of middleware or programming frameworks \cite{ranganathan2007complexity}. One of these initiatives is Apache Spark~\footnote{https://spark.apache.org/}. It was released in 2010 and has been adopted by many industries, being the most active open source project for big data processing \cite{armbrust2015sparksql}. 
+Several research efforts has been done in order to help developers to deal with the complexity of distributed systems. This is usually done by means of middlewares or programming frameworks \cite{ranganathan2007complexity}. One of these frameworks is Apache Spark~\footnote{https://spark.apache.org/} that was released in 2010 and has been adopted by many industries, being the most active open source project for big data processing \cite{armbrust2015sparksql}. 
 
-Spark is a cluster computing framework for implementing large-scale data processing applications while providing scalability and fault tolerance \cite{zaharia2010spark}. To use Spark, developers write a program that implements the high-level control flow of their application. The control flow is specified by using one of the supported programming language (Java, Scala, Python, R or SQL) and libraries for extended functionalities. These libraries includes Spark SQL for relational data, MLib for  machine learning, GraphX for graph processing, as well as a library for stream processing.
+Spark is a cluster computing framework for implementing large-scale data processing applications which provides scalability and fault tolerance \cite{zaharia2010spark}. Using Spark, developers write a program that implements the high-level control flow of their application. The control flow is specified by using one of the supported programming language (Java, Scala, Python, R or SQL). Spark users can also use libraries with a wide variable of functions, including Spark SQL to process relational data, MLib for  machine learning, GraphX for graph processing, as well as a library for stream processing.
 
-As stated by \cite{ranganathan2007complexity}, developers often face steep learning curves before they can start programming large distributed systems. The use of well-known technologies can help reduce this effort because developers will be able to reuse the knowledge they once learned and a lot of educational documentation has been produced already.
+As stated by \cite{ranganathan2007complexity}, developers often face steep learning curves before they can start programming large distributed systems. The use of well-known technologies can help in this process because developers will be able to reuse their knowledge and a lot of educational documentation.
 
-In the context of data processing, the use of SQL and the Relational Database Management Systems is plentiful. They have proven their worth over the years. The popularity of SQL shows that developers often prefer writing declarative queries to deal with data. But, according to \cite{armbrust2015sparksql} the relational-only approach is insufficient for many big data applications, such as those who deal with machine learning and graph processing.
+SQL and the Relational Database Management Systems has been widely used in the context of data processing. The popularity of SQL is an evidence that developers likes to write declarative queries to process data. However, according to \cite{armbrust2015sparksql} the relational-only approach is insufficient for many big data applications, such as those who deal with machine learning and graph processing.
 
-Spark SQL aims to combine both declarative relational queries and imperative procedural algorithms. It extends Spark with a declarative API in order to provide an integrated and easy-to-use environment for big Data. According to \cite{armbrust2015sparksql}, users feedback and benchmarks show that Spark SQL makes it significantly simpler and more efficient to write data pipelines that mix relational and procedural processing. 
+Spark SQL aims to combine both declarative relational queries and imperative procedural algorithms. It extends Spark with a declarative API in order to provide an integrated and easy-to-use environment for big Data. According to \cite{armbrust2015sparksql}, user feedbacks and benchmarks show that Spark SQL makes it significantly simpler and more efficient to write data pipelines that mix relational and procedural processing. 
 
-Nevertheless, the coding of a Spark SQL application is not a trivial task.
-To better understand the problems often encountered by programmers when developing big data processing applications with Spark SQL, this research proposes the identification and classification of these problems.
+Nevertheless, the implementation of a Spark SQL application is not a trivial task. To better understand the most common problems faced by programmers when developing big data processing applications with Spark SQL, this research proposes the identification and classification of these problems.
 
 \section{Motivation}
 
-Several researches were conducted to identify difficulties faced by software developers (TODO: Incluir Referências). But, to our knowledge, there are no studies that focused on get insights into the obstacles encountered by programmers in the domain of big data. This work aims to help filling this gap by identifying the problems faced by Spark SQL applications developers.
+Several researches were conducted to identify difficulties faced by software developers (TODO: Incluir Referências). However there are no studies focused on programming pitfalls that are common in Big Data domain. This work aims to help filling this gap by identifying the problems faced by Spark SQL applications developers.
 
-The results of such analysis could improve the current situation as a first step to empower the Spark application developer with a better toolset.  For instance, it could be used to construct development practice guidelines, automated test cases generation or tools for static analysis of code.
+This work proposes the generation of a taxonomy of the common problems.  Taxonomy is a key tool for the organization of knowledge inasmuch its hierarchical structure provides a way to classify the knowledge for a fast identification. 
 
-To do this work, it is important that it be conducted with as much organization as possible. Taxonomy is a key tool for this organization inasmuch its hierarchical structure provides a way to classify the knowledge for a fast retrieval of information.
+The taxonomy of errors in application development could be one key step to systematically address and resolve the problems often faced by developers. Such taxonomy may be used to categorize the types of problems, to explain why a specific problem occurs and to generate intervention strategies for each type of problem. This is intended as a first step to endow the Spark developer with a better toolset. For instance, the identification of common problems could be used to make guidelines of development practice, automated generation of test cases or tools for static analysis of code.
 
-The development of a taxonomy of errors in application development could be one key step to systematically address and resolve the problems identified. Such taxonomy may be developed to categorize the types of errors, to explain why a specific error occurs, and to generate intervention strategies for each type of error.
+\section{Goals}
 
-\section{General Goal}
-
-The main goal of this work is to construct a taxonomy of errors related to the development of big data processing applications with Spark SQL.
-
-\section{Specific Goals}
+The main goal of this work is to construct a taxonomy of problems related to the development of big data processing applications with Spark SQL.
 
 This work aims to address the following research questions:
 
@@ -39,24 +34,26 @@ This work aims to address the following research questions:
     
     \item Is the pattern of errors usually faced by Spark SQL developers the same one faced by SQL developers who works with other platforms?
     
-    SQL is used as interface for many database management systems (DBMS), including Spark SQL. Here we want to identify the similarities and differences in problems found in the Spark SQL and other DBMS. 
-    
     \item How the API notation changes the pattern of implementation errors when compared to SQL standard statements?
     
 \end{enumerate}
 
-With the first question we seek to identify the kinds of problems found, why these problems happens and how they are resolved. 
+With the first question we seek to identify the types of problems, why these problems happens and how they are resolved. 
 
-SQL is used as interface for many systems, including Spark SQL. With the second question  we want to identify the similarities and differences in problems found in the Spark SQL and in Database Management Systems.
+SQL is used as interface to many systems, including Spark SQL. With the second question  we want to identify the similarities and differences in problems found in the Spark SQL in contrast to other platforms.
 
-In addition to raw SQL commands, the Spark SQL application developer can also use an functional API to deal with the relational data. Answering the third question we want to identify if the problems are related to the notation used.
+In addition to raw SQL commands, the Spark SQL application developer can also use an functional API to deal with the relational data. By answering the third question we want to identify how the problems are related to the notation used.
     
 \section{The Problem Scope}
 
-The domain of big data applications is wide. For the purpose of this work, the analysis will be restricted to Spark SQL applications.
+The domain of big data applications is wide. For the purpose of this work, the analysis will be restricted only to problems related to Spark SQL application development. 
+
+We believe that we can conduct this investigation using information freely available on the Internet. We will seek for questions published by developers on community forum. For the Apache Spark Community~\footnote{https://spark.apache.org/community.html}, the recommended place to find help is the Stack Overflow~\footnote{https://stackoverflow.com/} Q\&A website. 
+
+Stack Overflow is an active forum for Spark users’ questions and answers. By consulting Stack Overflow we can state that developers face many problems concerning the implementation of Spark applications, since there are over 40.000 questions tagged with \emph{apache-spark} tag as off June 2018. Restricting our search only to Spark SQL questions, there are more than 6.000 questions in the Stack Overflow data set.
 
 \section{Contributions}
 
-\section{Thesis Organization}
+\section{Document Organization}
 
-The remainder of this thesis is organized as follows. In Chapter ...
+The remainder of this document is organized as follows. In chapter 2 there is the information background needed for the development of the research. Chapter 3 presents details of the research proposal and the methodology to be applied. The schedule of the project is shown in chapter 4. 
